@@ -3,8 +3,16 @@
 import { Ripple } from "@/components/magicui/ripple";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { ArrowRight, Waves } from "lucide-react";
+import {
+  ArrowRight,
+  HeartPulse,
+  Lightbulb,
+  MessageSquareHeart,
+  Waves,
+  Lock,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function HomePage() {
@@ -29,8 +37,40 @@ export default function HomePage() {
       : prev
   );
 
+  const features = [
+    {
+      icon: HeartPulse,
+      title: "24/7 Support",
+      description: "Always here to listen and support you, any time of day",
+      color: "from-rose-500/20",
+      delay: 0.2,
+    },
+    {
+      icon: Lightbulb,
+      title: "Smart Insights",
+      description: "Personalized guidance powered by emotional intelligence",
+      color: "from-amber-500/20",
+      delay: 0.4,
+    },
+    {
+      icon: Lock,
+      title: "Private & Secure",
+      description: "Your conversations are always confidential and encrypted",
+      color: "from-emerald-500/20",
+      delay: 0.6,
+    },
+    {
+      icon: MessageSquareHeart,
+      title: "Evidence-Based",
+      description: "Therapeutic techniques backed by clinical research",
+      color: "from-blue-500/20",
+      delay: 0.8,
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden bg-background text-foreground">
+      {/* HERO SECTION */}
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
         {/* Background gradients */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -53,7 +93,7 @@ export default function HomePage() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm border border-primary/30 bg-primary/10 backdrop-blur-sm hover:border-primary/50 transition-all duration-300">
             <Waves className="w-4 h-4 animate-wave text-primary" />
-            <span className="relative text-foreground/90 dark:text-foreground after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-primary/40 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">
+            <span className="relative text-foreground after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-primary/40 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">
               Your AI Agent Mental Health Companion
             </span>
           </div>
@@ -143,6 +183,55 @@ export default function HomePage() {
             </Button>
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* FEATURES SECTION */}
+      <section className="overflow-hidden relative py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <motion.div className="text-center mb-16 space-y-4">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-primary/90 to-primary bg-clip-text text-transparent">
+              How MedAi Helps You!
+            </h2>
+            <p className="text-foreground max-w-2xl mx-auto font-medium text-lg">
+              Experience a new kind of emotional support, powered by the Google
+              Gemini AI.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: feature.delay, duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <Card className="group relative overflow-hidden border border-primary/10 hover:border-primary/20 transition-all duration-300 h-[200px] bg-card/30 dark:bg-card/80 backdrop-blur-sm">
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${feature.color} to-transparent opacity-0 group-hover:opacity-25 transition-opacity duration-500`}
+                  />
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 rounded-xl bg-primary/10 dark:bg-primary/20 group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors duration-300">
+                        <feature.icon className="w-5 h-5 text-primary dark:text-primary/90" />
+                      </div>
+                      <h3 className="font-semibold tracking-tight text-foreground">
+                        {feature.title}
+                      </h3>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </CardContent>
+                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );
