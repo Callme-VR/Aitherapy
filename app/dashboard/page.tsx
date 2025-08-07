@@ -1,5 +1,6 @@
 "use client";
 
+import { AnxietyGames } from "@/components/games/anxiety-game";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { motion } from "framer-motion";
@@ -38,12 +39,14 @@ export default function Page() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
             <Card className="border-primary/10 relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-primary/10 to-transparent">
-              
+              <AnxietyGames />
               </div>
             </Card>
           </div>
-        </div> 
+        </div>
       </Container>
     </div>
   );
 }
+
+
