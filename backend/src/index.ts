@@ -1,14 +1,14 @@
-const express =require("express")
-import type { Request, Response } from 'express';
+const express=require('express')
+import { serve } from "inngest/express";
+import { inngest, functions } from "./inngest/index"
 
 const app = express();
-const port = process.env.PORT || 3000;
+// Important: ensure you add JSON middleware to process incoming JSON POST payloads.
+app.use(express.json());
+// Set up the "/api/inngest" (recommended) routes with the serve handler
+app.use("/api/inngest", serve({ client: inngest, functions }));
 
-app.get('/api/chat', (req: Request, res: Response) => {
-  res.send('Hello from TypeScript Express!');
+app.listen(3000, () => {
+  console.log('Server running on http://localhost:3000');
 });
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
- 
