@@ -1,0 +1,62 @@
+{"level":"info","message":"Server running on http://localhost:3001","timestamp":"2025-08-15T07:01:09.656Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3001/api/inngest","timestamp":"2025-08-15T07:01:09.661Z"}
+{"level":"info","message":"Server running on http://localhost:3001","timestamp":"2025-08-15T07:01:28.345Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3001/api/inngest","timestamp":"2025-08-15T07:01:28.350Z"}
+{"level":"info","message":"Server running on http://localhost:3001","timestamp":"2025-08-15T07:01:39.156Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3001/api/inngest","timestamp":"2025-08-15T07:01:39.160Z"}
+{"level":"info","message":"Server running on http://localhost:3001","timestamp":"2025-08-15T07:05:14.825Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3001/api/inngest","timestamp":"2025-08-15T07:05:14.830Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:05:26.708Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:05:26.712Z"}
+{"level":"info","message":"Server running on http://localhost:3001","timestamp":"2025-08-15T07:05:46.210Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3001/api/inngest","timestamp":"2025-08-15T07:05:46.215Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:07:58.480Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:07:58.497Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:08:49.176Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:08:49.181Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:15:17.129Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:15:17.134Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:24:19.015Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:24:19.018Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:24:34.512Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:24:34.517Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:29:22.427Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:29:22.431Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:29:32.884Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:29:32.888Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:29:57.658Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:29:57.662Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:30:02.319Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:30:02.325Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:30:34.376Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:30:34.380Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:30:56.798Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:30:56.803Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:36:00.856Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:36:00.861Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:36:10.052Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:36:10.056Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:36:21.830Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:36:21.835Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:36:50.326Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:36:50.332Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:37:03.202Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:37:03.208Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:37:16.360Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:37:16.365Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:39:12.257Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:39:12.261Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:41:13.541Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:41:13.546Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:41:17.661Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:41:17.665Z"}
+{"level":"info","message":"Server running on http://localhost:3000","timestamp":"2025-08-15T07:41:29.511Z"}
+{"level":"info","message":"Inggest endpoints available at http://localhost:3000/api/inngest","timestamp":"2025-08-15T07:41:29.520Z"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2025-08-15T08:16:08.721Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-15T08:16:09.806Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-15T08:16:54.386Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:3000","timestamp":"2025-08-15T08:16:54.395Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:3000/api/inngest","timestamp":"2025-08-15T08:16:54.397Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-15T08:17:02.841Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:3000","timestamp":"2025-08-15T08:17:02.848Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:3000/api/inngest","timestamp":"2025-08-15T08:17:02.850Z"}

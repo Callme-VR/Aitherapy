@@ -1,16 +1,26 @@
-import { format } from "path";
-import winston=require ("winston");
+import winston from "winston";
 
-const Logger=winston.createLogger({
-    level:"info",
-    format:winston.format.combine(
+const Logger = winston.createLogger({
+    level: "info",
+    format: winston.format.combine(
         winston.format.timestamp(),
-        winston.format.json(),
+        winston.format.json()
     ),
-    transports:[
+    transports: [
         new winston.transports.Console(),
-        new winston.transports.File({filename:"combined.log"})
-    ]
-})
+        new winston.transports.File({ filename: "combined.log" }),
+    ],
+});
 
-export default Logger; 
+if (process.env.NODE_ENV !== "production") {
+    Logger.add(
+        new winston.transports.Console({
+            format: winston.format.combine(
+                winston.format.colorize(),
+                winston.format.simple()
+            ),
+        })
+    );
+}
+
+export default Logger;

@@ -1,14 +1,34 @@
-const express=require('express')
+// src/index.ts
+import express from "express";
 import { serve } from "inngest/express";
-import { inngest, functions } from "./inngest/index"
+import { inngest, functions } from "./inngest/index";
+import Logger from "./utils/logger";
+import connectDB from "./utils/db";
+
+// No dotenv — load env variables if already available in process.env
 
 const app = express();
-// Important: ensure you add JSON middleware to process incoming JSON POST payloads.
+
+// Middleware
 app.use(express.json());
-// Set up the "/api/inngest" (recommended) routes with the serve handler
+
+// Inngest endpoint
 app.use("/api/inngest", serve({ client: inngest, functions }));
 
-app.listen(3000, () => {
-  console.log('Server running on http://localhost:3000');
-});
+// Start server
+const startServer = async () => {
+    try {
+        await connectDB();
 
+        const PORT = process.env.PORT || 3000;
+        app.listen(PORT, () => {
+            Logger.info(`🚀 Server running at http://localhost:${PORT}`);
+            Logger.info(`📡 Inngest endpoint: http://localhost:${PORT}/api/inngest`);
+        });
+    } catch (error) {
+        Logger.error(`❌ Failed to start server: ${(error as Error).message}`);
+        process.exit(1);
+    }
+};
+
+startServer();
