@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { User } from "../models/User";
 import process from "process";
-import { Session } from "../models/session";
+import { Session } from "../models/Session";
 
 export const register = async (req: Request, res: Response) => {
   try {
@@ -100,4 +100,5 @@ export const logout = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Server error", error });
   }
 };
+
 
