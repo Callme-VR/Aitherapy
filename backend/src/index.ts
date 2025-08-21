@@ -4,12 +4,29 @@ import { serve } from "inngest/express";
 import { inngest, functions } from "./inngest/index";
 import Logger from "./utils/logger";
 import connectDB from "./utils/db";
+import authRoutes from "./routes/auth";
+import cors from "cors";
+import helmet from "helmet";
+import morgan from "morgan";
 
 // No dotenv — load env variables if already available in process.env
 
 const app = express();
 
 // Middleware
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.use(express.json());
 
 // Inngest endpoint
