@@ -8,6 +8,7 @@ import authRoutes from "./routes/auth";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
+import { errorHandler } from "./middleware/errorHandler";
 
 // No dotenv — load env variables if already available in process.env
 
@@ -15,37 +16,32 @@ const app = express();
 
 // Middleware
 
-
-
-
-
-
-
-
-
-
-
-
-
+app.use(cors());
+app.use(helmet());
+app.use(morgan("dev"));
 app.use(express.json());
 
 // Inngest endpoint
 app.use("/api/inngest", serve({ client: inngest, functions }));
 
+// Routes
+app.use("/api/auth", authRoutes);
+app.use(errorHandler);
+
 // Start server
 const startServer = async () => {
-    try {
-        await connectDB();
+  try {
+    await connectDB();
 
-        const PORT = process.env.PORT || 3000;
-        app.listen(PORT, () => {
-            Logger.info(`🚀 Server running at http://localhost:${PORT}`);
-            Logger.info(`📡 Inngest endpoint: http://localhost:${PORT}/api/inngest`);
-        });
-    } catch (error) {
-        Logger.error(`❌ Failed to start server: ${(error as Error).message}`);
-        process.exit(1);
-    }
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+      Logger.info(`🚀 Server running at http://localhost:${PORT}`);
+      Logger.info(`📡 Inngest endpoint: http://localhost:${PORT}/api/inngest`);
+    });
+  } catch (error) {
+    Logger.error(`❌ Failed to start server: ${(error as Error).message}`);
+    process.exit(1);
+  }
 };
 
 startServer();
