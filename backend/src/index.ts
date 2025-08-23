@@ -9,7 +9,9 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import { errorHandler } from "./middleware/errorHandler";
-
+import chatRouter from "./routes/chat";
+import moodRouter from "./routes/mood";
+import activityRouter from "./routes/activity";
 // No dotenv — load env variables if already available in process.env
 
 const app = express();
@@ -25,7 +27,11 @@ app.use(express.json());
 app.use("/api/inngest", serve({ client: inngest, functions }));
 
 // Routes
-app.use("/api/auth", authRoutes);
+app.use("/auth", authRoutes);
+app.use("/chat", chatRouter);
+app.use("/api/mood", moodRouter);
+app.use("/api/activity", activityRouter);
+
 app.use(errorHandler);
 
 // Start server

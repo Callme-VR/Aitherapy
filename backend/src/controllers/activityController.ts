@@ -8,17 +8,20 @@ export const logActivity = async (
   next: NextFunction
 ) => {
   try {
-    const { type, name, description, difficulty, duration } = req.body;
+    const { type, name, description, difficulty, duration ,feedback} = req.body;
     const userId = req.user?._id;
     if (!userId) {
       return res.status(401).json({ message: "user not authenticated" });
     }
+  
     const activity = new Activity({
+      userId,
       type,
       name,
       description,
-      difficulty,
       duration,
+      feedback,
+      difficulty,
       timestamp: new Date(),
     });
     await activity.save();

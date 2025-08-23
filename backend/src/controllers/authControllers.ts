@@ -8,7 +8,7 @@ import { Session } from "../models/Session";
 export const register = async (req: Request, res: Response) => {
   try {
     const { name, email, password } = req.body;
-    if (!name || !email || password) {
+    if (!name || !email || !password) {
       return res.status(400).json({ message: "all filed are required" });
     }
     const existingUser = await User.findOne({ email });
@@ -60,7 +60,7 @@ export const login = async (req: Request, res: Response) => {
     }
     const token = jwt.sign(
       { userId: user._id },
-      process.env.JWT_SECRET || "your-secret-key",
+      process.env.JWT_SECRET as string,
       { expiresIn: "24h" }
     );
     const expiresAt = new Date();
