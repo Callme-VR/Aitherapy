@@ -1,8 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { Waves, Volume2, VolumeX, Play, Pause } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import {
+  Waves,
+  Volume2,
+  VolumeX,
+  Play,
+  Pause,
+  Check,
+  RotateCcw,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Progress } from "@/components/ui/progress";
@@ -10,63 +18,86 @@ import { Progress } from "@/components/ui/progress";
 const BREATH_DURATION = 8; // seconds for one breath cycle
 const SESSION_DURATION = 5 * 60; // 5 minutes in seconds
 
+const CompletionScreen = ({ onReset }: { onReset: () => void }) => (
+  <div className="flex flex-col items-center justify-center h-[400px] space-y-6">
+    <motion.div
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      className="w-20 h-20 rounded-full bg-blue-500/20 flex items-center justify-center"
+    >
+      <Check className="w-10 h-10 text-blue-500" />
+    </motion.div>
+    <h3 className="text-2xl font-semibold">Session Complete</h3>
+    <p className="text-muted-foreground text-center max-w-sm">
+      You've completed the ocean waves session. We hope you feel calmer.
+    </p>
+    <Button onClick={onReset} className="mt-4 gap-2">
+      <RotateCcw className="w-4 h-4" />
+      Start Again
+    </Button>
+  </div>
+);
+
 export function OceanWaves() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(50);
-  const [progress, setProgress] = useState(0);
   const [timeLeft, setTimeLeft] = useState(SESSION_DURATION);
-  const waveControls = useAnimation();
-  const [audio] = useState(new Audio("/sounds/waves.mp3"));
+  const [isComplete, setIsComplete] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    audio.loop = true;
-    audio.volume = volume / 100;
+    audioRef.current = new Audio("/sounds/waves.mp3");
+    audioRef.current.loop = true;
 
     return () => {
-      audio.pause();
-      audio.currentTime = 0;
+      audioRef.current?.pause();
     };
   }, []);
 
   useEffect(() => {
-    audio.volume = volume / 100;
+    if (audioRef.current) {
+      audioRef.current.volume = volume / 100;
+    }
   }, [volume]);
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
+    if (!isPlaying || isComplete) return;
 
-    if (isPlaying && timeLeft > 0) {
-      timer = setInterval(() => {
-        setTimeLeft((prev) => {
-          const newTime = prev - 1;
-          setProgress(((SESSION_DURATION - newTime) / SESSION_DURATION) * 100);
-          return newTime;
-        });
-      }, 1000);
-
-      // Animate waves
-      waveControls.start({
-        y: [0, -20, 0],
-        transition: {
-          duration: BREATH_DURATION,
-          repeat: Infinity,
-          ease: "easeInOut",
-        },
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          setIsPlaying(false);
+          setIsComplete(true);
+          audioRef.current?.pause();
+          return 0;
+        }
+        return prev - 1;
       });
-    } else {
-      waveControls.stop();
-    }
+    }, 1000);
 
     return () => clearInterval(timer);
-  }, [isPlaying, timeLeft]);
+  }, [isPlaying, isComplete]);
 
   const togglePlay = () => {
+    if (isComplete) return;
+
     if (isPlaying) {
-      audio.pause();
+      audioRef.current?.pause();
     } else {
-      audio.play();
+      audioRef.current?.play();
     }
     setIsPlaying(!isPlaying);
+  };
+
+  const handleReset = () => {
+    setIsComplete(false);
+    setTimeLeft(SESSION_DURATION);
+    setIsPlaying(false);
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
   };
 
   const formatTime = (seconds: number) => {
@@ -75,19 +106,32 @@ export function OceanWaves() {
     return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
+  const progress = ((SESSION_DURATION - timeLeft) / SESSION_DURATION) * 100;
+
+  if (isComplete) {
+    return <CompletionScreen onReset={handleReset} />;
+  }
+
   return (
     <div className="flex flex-col items-center justify-center h-[400px] space-y-8">
       <div className="relative w-48 h-48">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-500/20 to-transparent rounded-full blur-xl" />
         <motion.div
-          animate={waveControls}
+          animate={{
+            y: isPlaying ? [0, -20, 0] : 0,
+          }}
+          transition={{
+            duration: BREATH_DURATION,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
           className="absolute inset-0 flex items-center justify-center"
         >
           <div className="relative">
             <Waves className="w-24 h-24 text-blue-600" />
             <motion.div
               animate={{
-                opacity: [0.5, 0.8, 0.5],
+                opacity: isPlaying ? [0.5, 0.8, 0.5] : 0.5,
               }}
               transition={{
                 duration: BREATH_DURATION,
@@ -107,17 +151,18 @@ export function OceanWaves() {
             <span>{volume}%</span>
           </div>
           <div className="flex items-center gap-2">
-            {volume === 0 ? (
+            <button onClick={() => setVolume(0)}>
               <VolumeX className="w-4 h-4" />
-            ) : (
-              <Volume2 className="w-4 h-4" />
-            )}
+            </button>
             <Slider
               value={[volume]}
               onValueChange={(value) => setVolume(value[0])}
               max={100}
               step={1}
             />
+            <button onClick={() => setVolume(100)}>
+              <Volume2 className="w-4 h-4" />
+            </button>
           </div>
         </div>
 

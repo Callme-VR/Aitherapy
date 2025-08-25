@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
-  const API_URL = process.env.API_URL as string;
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
   try {
     const res = await fetch(`${API_URL}/auth/register`, {
       method: "POST",

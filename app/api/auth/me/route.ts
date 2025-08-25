@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
-  const API_URL = process.env.BACKEND_API_URL as string;
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
   const token = req.headers.get("Authorization");
   if (!token) {
     return NextResponse.json(

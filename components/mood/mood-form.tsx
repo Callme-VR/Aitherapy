@@ -4,8 +4,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Loader2 } from "lucide-react";
-// import { useToast } from "@/components/ui/use-toast";
-// import { useSession } from "@/lib/contexts/session-context";
+import { toast, useToast } from "@/components/ui/use-toast";
+import { useSession } from "@/lib/contexts/session-context";
 import { useRouter } from "next/navigation";
 
 interface MoodFormProps {
@@ -15,8 +15,8 @@ interface MoodFormProps {
 export function MoodForm({ onSuccess }: MoodFormProps) {
   const [moodScore, setMoodScore] = useState(50);
   const [isLoading, setIsLoading] = useState(false);
-  // const { toast } = useToast();
-  // const { user, isAuthenticated, loading } = useSession();
+  const { toast } = useToast();
+  const { user, isAuthenticated, loading } = useSession();
   const router = useRouter();
 
   const emotions = [
@@ -27,7 +27,8 @@ export function MoodForm({ onSuccess }: MoodFormProps) {
     { value: 100, label: "🤗", description: "Great" },
   ];
 
-  const currentEmotion =emotions.find((em) => Math.abs(moodScore - em.value) < 15) || emotions[2];
+  const currentEmotion =
+    emotions.find((em) => Math.abs(moodScore - em.value) < 15) || emotions[2];
 
   const handleSubmit = async () => {
     try {
@@ -59,20 +60,20 @@ export function MoodForm({ onSuccess }: MoodFormProps) {
       const data = await response.json();
       console.log("MoodForm: Success response:", data);
 
-      // toast({
-      //   title: "Mood tracked successfully!",
-      //   description: "Your mood has been recorded.",
-      // });
+      toast({
+        title: "Mood tracked successfully!",
+        description: "Your mood has been recorded.",
+      });
 
       onSuccess?.();
     } catch (error) {
       console.error("MoodForm: Error:", error);
-      // toast({
-      //   title: "Error",
-      //   description:
-      //     error instanceof Error ? error.message : "Failed to track mood",
-      //   variant: "destructive",
-      // });
+      toast({
+        title: "Error",
+        description:
+          error instanceof Error ? error.message : "Failed to track mood",
+        variant: "destructive",
+      });
     } finally {
       setIsLoading(false);
     }

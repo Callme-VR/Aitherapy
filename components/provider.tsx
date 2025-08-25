@@ -1,9 +1,21 @@
 "use client";
 
 import { ThemeProvider } from "next-themes";
-import React from "react";
+import { SessionProvider as NextAuthSessionProvider } from "next-auth/react";
+import { SessionProvider as SessionContextProvider } from "@/lib/contexts/session-context";
+import React, { ReactNode, FC } from "react";
 
-export function Providers({ children }: { children: React.ReactNode }) {
+const CustomSessionProvider: FC<{ children: ReactNode }> = ({ children }) => {
+  return (
+    <NextAuthSessionProvider>
+      <SessionContextProvider>
+        {children}
+      </SessionContextProvider>
+    </NextAuthSessionProvider>
+  );
+};
+
+export const Providers: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <ThemeProvider
       attribute="class"
@@ -11,7 +23,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      {children}
+      <CustomSessionProvider>
+        {children}
+      </CustomSessionProvider>
     </ThemeProvider>
   );
-}
+};

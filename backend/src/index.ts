@@ -1,4 +1,6 @@
 // src/index.ts
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import { serve } from "inngest/express";
 import { inngest, functions } from "./inngest/index";
@@ -18,7 +20,16 @@ const app = express();
 
 // Middleware
 
-app.use(cors());
+// Configure CORS to allow all origins in development
+const corsOptions = {
+  origin: '*', // In production, replace with your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(helmet());
 app.use(morgan("dev"));
 app.use(express.json());
@@ -39,7 +50,7 @@ const startServer = async () => {
   try {
     await connectDB();
 
-    const PORT = process.env.PORT || 3000;
+    const PORT = process.env.PORT;
     app.listen(PORT, () => {
       Logger.info(`🚀 Server running at http://localhost:${PORT}`);
       Logger.info(`📡 Inngest endpoint: http://localhost:${PORT}/api/inngest`);

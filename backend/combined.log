@@ -174,3 +174,65 @@
 {"level":"info","message":"🚀 Server running at http://localhost:3000","timestamp":"2025-08-23T18:28:03.400Z"}
 {"level":"info","message":"📡 Inngest endpoint: http://localhost:3000/api/inngest","timestamp":"2025-08-23T18:28:03.401Z"}
 {"level":"info","message":"Mood entry created for user 68aa04603f9f5d9d722cd935","timestamp":"2025-08-23T18:30:13.319Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T08:43:21.466Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:3000","timestamp":"2025-08-25T08:43:21.476Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:3000/api/inngest","timestamp":"2025-08-25T08:43:21.477Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T09:21:17.506Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:3000","timestamp":"2025-08-25T09:21:17.519Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:3000/api/inngest","timestamp":"2025-08-25T09:21:17.521Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T09:25:28.260Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:3000","timestamp":"2025-08-25T09:25:28.274Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:3000/api/inngest","timestamp":"2025-08-25T09:25:28.276Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T09:29:01.156Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:3000","timestamp":"2025-08-25T09:29:01.165Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:3000/api/inngest","timestamp":"2025-08-25T09:29:01.166Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T09:31:28.830Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:3001","timestamp":"2025-08-25T09:31:28.852Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:3001/api/inngest","timestamp":"2025-08-25T09:31:28.854Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T09:32:00.347Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:3001","timestamp":"2025-08-25T09:32:00.358Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:3001/api/inngest","timestamp":"2025-08-25T09:32:00.359Z"}
+{"level":"error","message":"❌ MongoDB connection failed: Error: querySrv EREFUSED _mongodb._tcp.cluster2.jid9ell.mongodb.net","timestamp":"2025-08-25T09:35:32.253Z"}
+{"level":"error","message":"❌ MongoDB connection failed: Error: querySrv ECONNREFUSED _mongodb._tcp.cluster2.jid9ell.mongodb.net","timestamp":"2025-08-25T09:36:02.686Z"}
+{"level":"error","message":"❌ MongoDB connection failed: MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/","timestamp":"2025-08-25T09:38:29.412Z"}
+{"level":"error","message":"❌ MongoDB connection failed: MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/","timestamp":"2025-08-25T09:40:08.093Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T09:41:01.296Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:3000","timestamp":"2025-08-25T09:41:01.307Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:3000/api/inngest","timestamp":"2025-08-25T09:41:01.308Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T09:41:30.263Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:5000","timestamp":"2025-08-25T09:41:30.282Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:5000/api/inngest","timestamp":"2025-08-25T09:41:30.285Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T09:50:01.284Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:5000","timestamp":"2025-08-25T09:50:01.300Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:5000/api/inngest","timestamp":"2025-08-25T09:50:01.304Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T09:52:19.303Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:5000","timestamp":"2025-08-25T09:52:19.319Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:5000/api/inngest","timestamp":"2025-08-25T09:52:19.321Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T09:57:55.020Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:5000","timestamp":"2025-08-25T09:57:55.034Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:5000/api/inngest","timestamp":"2025-08-25T09:57:55.036Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T09:58:07.591Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:5000","timestamp":"2025-08-25T09:58:07.602Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:5000/api/inngest","timestamp":"2025-08-25T09:58:07.604Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T10:04:55.597Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:5000","timestamp":"2025-08-25T10:04:55.610Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:5000/api/inngest","timestamp":"2025-08-25T10:04:55.613Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T10:08:39.684Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:5000","timestamp":"2025-08-25T10:08:39.703Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:5000/api/inngest","timestamp":"2025-08-25T10:08:39.705Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T10:13:47.820Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:5000","timestamp":"2025-08-25T10:13:47.833Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:5000/api/inngest","timestamp":"2025-08-25T10:13:47.835Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T10:14:49.007Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:5000","timestamp":"2025-08-25T10:14:49.030Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:5000/api/inngest","timestamp":"2025-08-25T10:14:49.036Z"}
+{"level":"error","message":"❌ MongoDB connection failed: MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/","timestamp":"2025-08-25T10:39:12.260Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T10:39:52.788Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:5000","timestamp":"2025-08-25T10:39:52.796Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:5000/api/inngest","timestamp":"2025-08-25T10:39:52.797Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T10:43:08.939Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:5000","timestamp":"2025-08-25T10:43:08.946Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:5000/api/inngest","timestamp":"2025-08-25T10:43:08.947Z"}
+{"_message":"Activity validation failed","errors":{"type":{"kind":"enum","message":"`mood_log` is not a valid enum value for path `type`.","name":"ValidatorError","path":"type","properties":{"enumValues":["Exercise","Workout","Yoga","Meditation","journaling","breathing","Therapy"],"message":"`mood_log` is not a valid enum value for path `type`.","path":"type","type":"enum","value":"mood_log"},"value":"mood_log"}},"level":"error","message":"Unexpected error: Activity validation failed: type: `mood_log` is not a valid enum value for path `type`.","stack":"ValidationError: Activity validation failed: type: `mood_log` is not a valid enum value for path `type`.\n    at model.Document.invalidate (E:\\Project\\aitherpy\\backend\\node_modules\\.pnpm\\mongoose@8.17.1\\node_modules\\mongoose\\lib\\document.js:3358:32)\n    at E:\\Project\\aitherpy\\backend\\node_modules\\.pnpm\\mongoose@8.17.1\\node_modules\\mongoose\\lib\\document.js:3119:17\n    at E:\\Project\\aitherpy\\backend\\node_modules\\.pnpm\\mongoose@8.17.1\\node_modules\\mongoose\\lib\\schemaType.js:1410:9\n    at processTicksAndRejections (node:internal/process/task_queues:77:11)","timestamp":"2025-08-25T11:17:31.860Z"}
+{"_message":"Activity validation failed","errors":{"type":{"kind":"enum","message":"`mood_log` is not a valid enum value for path `type`.","name":"ValidatorError","path":"type","properties":{"enumValues":["Exercise","Workout","Yoga","Meditation","journaling","breathing","Therapy"],"message":"`mood_log` is not a valid enum value for path `type`.","path":"type","type":"enum","value":"mood_log"},"value":"mood_log"}},"level":"error","message":"Unexpected error: Activity validation failed: type: `mood_log` is not a valid enum value for path `type`.","stack":"ValidationError: Activity validation failed: type: `mood_log` is not a valid enum value for path `type`.\n    at model.Document.invalidate (E:\\Project\\aitherpy\\backend\\node_modules\\.pnpm\\mongoose@8.17.1\\node_modules\\mongoose\\lib\\document.js:3358:32)\n    at E:\\Project\\aitherpy\\backend\\node_modules\\.pnpm\\mongoose@8.17.1\\node_modules\\mongoose\\lib\\document.js:3119:17\n    at E:\\Project\\aitherpy\\backend\\node_modules\\.pnpm\\mongoose@8.17.1\\node_modules\\mongoose\\lib\\schemaType.js:1410:9\n    at processTicksAndRejections (node:internal/process/task_queues:77:11)","timestamp":"2025-08-25T11:17:32.298Z"}
+{"_message":"Activity validation failed","errors":{"type":{"kind":"enum","message":"`mood_log` is not a valid enum value for path `type`.","name":"ValidatorError","path":"type","properties":{"enumValues":["Exercise","Workout","Yoga","Meditation","journaling","breathing","Therapy"],"message":"`mood_log` is not a valid enum value for path `type`.","path":"type","type":"enum","value":"mood_log"},"value":"mood_log"}},"level":"error","message":"Unexpected error: Activity validation failed: type: `mood_log` is not a valid enum value for path `type`.","stack":"ValidationError: Activity validation failed: type: `mood_log` is not a valid enum value for path `type`.\n    at model.Document.invalidate (E:\\Project\\aitherpy\\backend\\node_modules\\.pnpm\\mongoose@8.17.1\\node_modules\\mongoose\\lib\\document.js:3358:32)\n    at E:\\Project\\aitherpy\\backend\\node_modules\\.pnpm\\mongoose@8.17.1\\node_modules\\mongoose\\lib\\document.js:3119:17\n    at E:\\Project\\aitherpy\\backend\\node_modules\\.pnpm\\mongoose@8.17.1\\node_modules\\mongoose\\lib\\schemaType.js:1410:9\n    at processTicksAndRejections (node:internal/process/task_queues:77:11)","timestamp":"2025-08-25T11:17:33.620Z"}
