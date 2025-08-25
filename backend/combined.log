@@ -252,3 +252,4 @@
 {"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T12:30:01.271Z"}
 {"level":"info","message":"🚀 Server running at http://localhost:5000","timestamp":"2025-08-25T12:30:01.289Z"}
 {"level":"info","message":"📡 Inngest endpoint: http://localhost:5000/api/inngest","timestamp":"2025-08-25T12:30:01.292Z"}
+{"level":"info","message":"Processing message: hii","sessionId":"7d94f9c2-7c72-4735-b845-f74fde40769b","timestamp":"2025-08-25T12:30:48.715Z"}
