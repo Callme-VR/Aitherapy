@@ -249,3 +249,6 @@
 {"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T12:28:27.180Z"}
 {"level":"info","message":"🚀 Server running at http://localhost:5000","timestamp":"2025-08-25T12:28:27.214Z"}
 {"level":"info","message":"📡 Inngest endpoint: http://localhost:5000/api/inngest","timestamp":"2025-08-25T12:28:27.219Z"}
+{"level":"info","message":"✅ MongoDB connected successfully","timestamp":"2025-08-25T12:30:01.271Z"}
+{"level":"info","message":"🚀 Server running at http://localhost:5000","timestamp":"2025-08-25T12:30:01.289Z"}
+{"level":"info","message":"📡 Inngest endpoint: http://localhost:5000/api/inngest","timestamp":"2025-08-25T12:30:01.292Z"}
