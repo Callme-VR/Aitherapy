@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const BACKEND_API_URL = process.env.BACKEND_API_URL as string;
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
 export async function GET(
   req: NextRequest,
@@ -10,7 +10,7 @@ export async function GET(
     const { sessionId } = params;
     console.log(`Getting histroy chat session ${sessionId}`);
     const response = await fetch(
-      `${BACKEND_API_URL}/chat/sessions/${sessionId}/history`,
+      `${API_URL}/api/chat/sessions/${sessionId}/history`,
       {
         method: "GET",
         headers: {

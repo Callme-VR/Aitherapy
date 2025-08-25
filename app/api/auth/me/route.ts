@@ -14,7 +14,7 @@ export async function GET(req: NextRequest) {
     );
   }
   try {
-    const response = await fetch(`${API_URL}/auth/me`, {
+    const response = await fetch(`${API_URL}/api/auth/me`, {
       method: "GET",
       headers: {
         "content-type": "application/json",

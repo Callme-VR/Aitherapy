@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export const BACKEND_API_URL = process.env.BACKEND_API_URL as string;
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
 export async function POST(request: NextRequest) {
   const authHeader = request.headers.get("Authorization");
@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const response = await fetch(`${BACKEND_API_URL}/chat/sessions`, {
+    const response = await fetch(`${API_URL}/api/chat/sessions`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -31,12 +31,10 @@ export async function POST(request: NextRequest) {
 
     const data = await response.json();
     return NextResponse.json(data, { status: response.status });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error creating chat session:", error);
     return NextResponse.json(
-      {
-        message: "Failed to create chat session",
-      },
+      { message: error.message || "Failed to create chat session" },
       { status: 500 }
     );
   }

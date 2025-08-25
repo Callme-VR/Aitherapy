@@ -4,7 +4,7 @@ export async function POST(request: NextRequest) {
   const body = await request.json();
   const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
   try {
-    const res = await fetch(`${API_URL}/auth/register`, {
+    const res = await fetch(`${API_URL}/api/auth/register`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -38,11 +38,10 @@ export interface ChatMessage {
       goal: string;
       progress: any[];
     };
-  }
+  } 
   
   const API_BASE =
-    process.env.BACKEND_API_URL ||
-    "";
+    process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
   
   // Helper function to get auth headers
   const getAuthHeaders = () => {
@@ -56,7 +55,7 @@ export interface ChatMessage {
   export const createChatSession = async (): Promise<string> => {
     try {
       console.log("Creating new chat session...");
-      const response = await fetch(`${API_BASE}/chat/sessions`, {
+      const response = await fetch(`${API_BASE}/api/chat/sessions`, {
         method: "POST",
         headers: getAuthHeaders(),
       });
@@ -83,7 +82,7 @@ export interface ChatMessage {
     try {
       console.log(`Sending message to session ${sessionId}:`, message);
       const response = await fetch(
-        `${API_BASE}/chat/sessions/${sessionId}/messages`,
+        `${API_BASE}/api/chat/sessions/${sessionId}/messages`,
         {
           method: "POST",
           headers: getAuthHeaders(),
@@ -112,7 +111,7 @@ export interface ChatMessage {
     try {
       console.log(`Fetching chat history for session ${sessionId}`);
       const response = await fetch(
-        `${API_BASE}/chat/sessions/${sessionId}/history`,
+        `${API_BASE}/api/chat/sessions/${sessionId}/history`,
         {
           headers: getAuthHeaders(),
         }
@@ -148,7 +147,7 @@ export interface ChatMessage {
   export const getAllChatSessions = async (): Promise<ChatSession[]> => {
     try {
       console.log("Fetching all chat sessions...");
-      const response = await fetch(`${API_BASE}/chat/sessions`, {
+      const response = await fetch(`${API_BASE}/api/chat/sessions`, {
         headers: getAuthHeaders(),
       });
   

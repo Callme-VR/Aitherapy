@@ -21,7 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
-import useSession from "@/lib/contexts/session-context";
+import { useSession } from "@/lib/contexts/session-context";
 import { logActivity } from "@/lib/api/activity";
 
 const activityTypes = [
