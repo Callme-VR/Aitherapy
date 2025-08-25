@@ -253,3 +253,6 @@
 {"level":"info","message":"🚀 Server running at http://localhost:5000","timestamp":"2025-08-25T12:30:01.289Z"}
 {"level":"info","message":"📡 Inngest endpoint: http://localhost:5000/api/inngest","timestamp":"2025-08-25T12:30:01.292Z"}
 {"level":"info","message":"Processing message: hii","sessionId":"7d94f9c2-7c72-4735-b845-f74fde40769b","timestamp":"2025-08-25T12:30:48.715Z"}
+{"level":"info","message":"Processing message: i need wok life balance","sessionId":"3de9d7e6-d74e-40ec-b3b4-7f438b374d13","timestamp":"2025-08-25T12:32:39.869Z"}
+{"level":"info","message":"Processing message: yes","sessionId":"3de9d7e6-d74e-40ec-b3b4-7f438b374d13","timestamp":"2025-08-25T12:32:58.558Z"}
+{"level":"info","message":"Processing message: thanks bro","sessionId":"3de9d7e6-d74e-40ec-b3b4-7f438b374d13","timestamp":"2025-08-25T12:33:11.198Z"}
