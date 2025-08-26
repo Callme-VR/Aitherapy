@@ -50,10 +50,12 @@ const startServer = async () => {
   try {
     await connectDB();
 
-    const PORT = process.env.PORT;
-    app.listen(PORT, () => {
-      Logger.info(`🚀 Server running at http://localhost:${PORT}`);
-      Logger.info(`📡 Inngest endpoint: http://localhost:${PORT}/api/inngest`);
+    const PORT = process.env.PORT || 3000;
+    const server = app.listen(PORT, () => {
+      const address = server.address();
+      const host = typeof address === 'string' ? address : `http://localhost:${PORT}`;
+      Logger.info(`🚀 Server running at ${host}`);
+      Logger.info(`📡 Inngest endpoint: ${host}/api/inngest`);
     });
   } catch (error) {
     Logger.error(`❌ Failed to start server: ${(error as Error).message}`);
