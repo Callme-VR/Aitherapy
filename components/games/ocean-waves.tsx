@@ -29,7 +29,7 @@ const CompletionScreen = ({ onReset }: { onReset: () => void }) => (
     </motion.div>
     <h3 className="text-2xl font-semibold">Session Complete</h3>
     <p className="text-muted-foreground text-center max-w-sm">
-      You've completed the ocean waves session. We hope you feel calmer.
+      You completed the ocean waves session. We hope you feel calmer.
     </p>
     <Button onClick={onReset} className="mt-4 gap-2">
       <RotateCcw className="w-4 h-4" />

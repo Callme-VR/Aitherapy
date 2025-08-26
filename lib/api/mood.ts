@@ -5,7 +5,7 @@ interface MOodEntry {
 }
 export async function trackMood(
   data: MOodEntry
-): Promise<{ success: boolean; data: any }> {
+): Promise<{ success: boolean; data:MOodEntry}> {
   const tokon = localStorage.getItem("token");
   if (!tokon) throw new Error("NOT authetication");
 

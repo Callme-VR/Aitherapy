@@ -26,7 +26,7 @@ export async function GET(
     const data = await response.json();
     console.log("chat history fetched successfully", data);
 
-    const formattedMessages = data.map((msg: any) => {
+    const formattedMessages = data.map((msg: { role: any; content: any; timestamp: string | number | Date; }) => {
       return {
         role: msg.role,
         content: msg.content,

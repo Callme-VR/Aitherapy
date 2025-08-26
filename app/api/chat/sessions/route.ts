@@ -31,10 +31,10 @@ export async function POST(request: NextRequest) {
 
     const data = await response.json();
     return NextResponse.json(data, { status: response.status });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error creating chat session:", error);
     return NextResponse.json(
-      { message: error.message || "Failed to create chat session" },
+      { message:"Failed to create chat session" },
       { status: 500 }
     );
   }

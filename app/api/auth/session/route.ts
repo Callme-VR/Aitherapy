@@ -26,10 +26,10 @@ async function handleLogout(req: NextRequest) {
     }
 
     return new NextResponse(null, { status: 204 });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Logout error:", error);
     return NextResponse.json(
-      { message: error.message || "Error during logout" },
+      { message:"Error during logout" },
       { status: 500 }
     );
   }
